@@ -167,7 +167,8 @@ A proposal is approved/declined when the administrator counts the votes. There m
 
         proposal storage p = Proposals[_id];
 
-        if (Proposals[_id].votesDown < Proposals[_id].votesUp && (Proposals[_id].votesUp + Proposals[_id].votesDown) / Proposals[_id].maxVotes >= quorum / 100) {
+        if (Proposals[_id].votesDown < Proposals[_id].votesUp &&
+           (Proposals[_id].votesUp + Proposals[_id].votesDown) / Proposals[_id].maxVotes >= quorum / 100) {
             Proposals[_id].passed = true; 
         }
 
