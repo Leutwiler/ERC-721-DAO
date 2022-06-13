@@ -192,6 +192,30 @@ A proposal is approved/declined when the administrator counts the votes. There m
     }
 ```
 
+## DAO Deployment 📜
+A deploy script was written in JavaScript. It deploys our code using Hardhat.
+
+```
+const hre = require("hardhat");
+
+async function main() {
+
+  const Dao = await hre.ethers.getContractFactory("Dao");
+  const dao = await Dao.deploy();
+
+  await dao.deployed();
+
+  console.log("Dao deployed to:", dao.address);
+}
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+```
+
 ## Thanks 😄
 
 Thanks for reading my code! This is the first time I've tried to code a DAO! I can easily notice my evolution at each project.
